@@ -1,7 +1,7 @@
 # Bergerac
 > Easy to manage dev env for OS X
 
-*!! This is just a skeleton, fork or copy this and make it your own !!*
+:surfer: **This is just a skeleton, fork or copy this and make it your own!** :surfer:
 
 Bergerac should be installed in the users home folder. But can be changed with `$BERGERAC_DIR` env variable.
 
@@ -15,7 +15,7 @@ $ xcode-select --install
 ## Installing
 1. Clone the repository
   ```shell
-  $ git clone git@github.com:jenslind/bergerac.git ${HOME}/bergerac
+  $ git clone git@github.com:USER/REPO.git ${HOME}/bergerac
   ```
 
 2. Run `setup.sh`
