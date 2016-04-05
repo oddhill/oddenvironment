@@ -5,6 +5,13 @@
 
 Bergerac should be installed in the users home folder. But can be changed with `$BERGERAC_DIR` env variable.
 
+## Select software to install
+- Put ruby gems in `Gemfile`
+- Put node modules in `package.json`
+- Put php packages in `composer.json`
+- Put brew packages in `Brewfile`
+- Put puppet code in `site.pp` (nice for copying config files etc.)
+
 ## Prerequisites
 You need CLT installed.
 Run the following to install it:
