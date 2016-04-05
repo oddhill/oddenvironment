@@ -1,6 +1,10 @@
 # Bergerac
 > Easy to manage dev env for OS X
 
+*!! This is just a skeleton, fork or copy this and make it your own !!*
+
+Bergerac should be installed in the users home folder. But can be changed with `$BERGERAC_DIR` env variable.
+
 ## Prerequisites
 You need CLT installed.
 Run the following to install it:

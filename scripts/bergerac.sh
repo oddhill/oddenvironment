@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-source "$(brew --prefix nvm)/nvm.sh"
 
-cd $HOME/bergerac
+cd $BERGERAC_DIR
 git pull
 brew bundle check || brew bundle
+source "$(brew --prefix nvm)/nvm.sh"
 nvm which 5.0 || nvm install 5.0
 npm install
 composer install

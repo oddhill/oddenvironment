@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 brew --version || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-cd $HOME/bergerac
-brew bundle
 
 sudo mkdir -p /etc/facter/facts.d
 sudo touch /etc/facter/facts.d/env.txt
