@@ -1,1 +1,1 @@
-Used to store various files needed for your env.
+Use to store various files needed for your env.
