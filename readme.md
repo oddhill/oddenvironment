@@ -23,9 +23,9 @@ $ xcode-select --install
   $ ${HOME}/bergerac/scripts/setup.sh
   ```
 
-3. Add `env.sh` to your shell config file.
-  Add the following line at the bottom of your config file.
+3. Add the following lines to your shell config file.
   ```shell
+  export BERGERAC_DIR="$HOME/bergerac"
   source $HOME/bergerac/scripts/env.sh
   ```
 
