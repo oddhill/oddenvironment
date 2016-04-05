@@ -20,7 +20,7 @@ $ xcode-select --install
 
 2. Run `setup.sh`
   ```shell
-  $ ${HOME}/bergerac/setup.sh
+  $ ${HOME}/bergerac/scripts/setup.sh
   ```
 
 3. Add `env.sh` to your shell config file.
