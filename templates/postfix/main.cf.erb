@@ -691,9 +691,9 @@ inet_interfaces = all
 # Send mail via Sendgrid. See the documentation at
 # https://sendgrid.com/docs/Integrate/Mail_Servers/postfix.html
 # for further information.
-smtp_sasl_auth_enable = 'yes'
+smtp_sasl_auth_enable = yes
 smtp_sasl_password_maps = <%= @sendgrid_auth %>
-smtp_sasl_security_options = 'noanonymous'
-smtp_tls_security_level = 'encrypt'
+smtp_sasl_security_options = noanonymous
+smtp_tls_security_level = encrypt
 header_size_limit = 4096000
-relayhost = '[smtp.sendgrid.net]:587'
+relayhost = [smtp.sendgrid.net]:587
