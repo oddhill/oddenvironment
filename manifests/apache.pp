@@ -14,15 +14,25 @@ $apache_cert_key = "${home}/bergerac/data/ssl/apache.key"
 file { '/etc/apache2/extra/httpd-vhosts.conf':
   content => template("${templates}/apache/httpd-vhosts.conf.erb"),
   owner   => root,
-  group   => wheel
+  group   => wheel,
+  notify  => Exec['restart apache']
 }
 file { '/etc/apache2/extra/httpd-ssl.conf':
   content => template("${templates}/apache/httpd-ssl.conf.erb"),
   owner   => root,
-  group   => wheel
+  group   => wheel,
+  notify  => Exec['restart apache']
 }
 file { '/etc/apache2/httpd.conf':
   content => template("${templates}/apache/httpd.conf.erb"),
   owner   => root,
-  group   => wheel
+  group   => wheel,
+  notify  => Exec['restart apache']
+}
+
+exec { 'restart apache' :
+  command => 'apachectl restart',
+  cwd         => '/usr/sbin',
+  user        => 'root',
+  refreshonly => true
 }
