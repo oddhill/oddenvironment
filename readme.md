@@ -11,7 +11,7 @@ $ xcode-select --install
 ## Installing
 1. Clone the repository
   ```shell
-  $ git clone git@github.com:oddhill/oddenvironment.git ${HOME}/bergerac
+  $ git clone https://github.com/oddhill/oddenvironment.git ${HOME}/bergerac
   ```
 
 2. Run `setup.sh`
