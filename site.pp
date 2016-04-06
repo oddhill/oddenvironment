@@ -71,3 +71,20 @@ service { 'homebrew.mxcl.mysql':
   ensure => 'running',
   require => File['/Library/LaunchDaemons/homebrew.mxcl.mysql.plist']
 }
+
+file { '/Library/LaunchDaemons/homebrew.mxcl.mongodb.plist':
+  content => template("${templates}/mongodb/homebrew.mxcl.mongodb.plist.erb")
+}
+
+service { 'homebrew.mxcl.mongodb':
+  ensure => 'running',
+  require => File['/Library/LaunchDaemons/homebrew.mxcl.mongodb.plist']
+}
+
+$sendgrid_auth = "static:${sendgrid_user}:${sendgrid_pass}"
+
+file { '/etc/postfix/main.cf':
+  content => template("${templates}/postfix/main.cf.erb"),
+  group   => 'wheel',
+  owner   => 'root'
+}
