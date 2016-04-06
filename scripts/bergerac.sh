@@ -8,4 +8,4 @@ nvm which 5.0 || nvm install 5.0
 npm install
 composer install
 bundle install
-sudo puppet apply site.pp
+sudo puppet apply manifests
