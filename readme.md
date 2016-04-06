@@ -26,7 +26,7 @@ $ xcode-select --install
   alias oddenv=bergerac
   ```
 
-4. Restart your shell and run `bergerac`
+4. Restart your shell and run `oddenv`
   ```shell
   $ oddenv
   ```
