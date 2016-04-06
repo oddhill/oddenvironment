@@ -1,0 +1,12 @@
+<VirtualHost *:<%= @apache_port %>>
+  UseCanonicalName off
+  VirtualDocumentRoot <%= @apache_sites_dir %>/%1
+</VirtualHost>
+
+<VirtualHost *:<%= @apache_port_ssl %>>
+  UseCanonicalName off
+  VirtualDocumentRoot <%= @apache_sites_dir %>/%1
+  SSLEngine on
+  SSLCertificateFile <%= @apache_cert %>
+  SSLCertificateKeyFile <%= @apache_cert_key %>
+</VirtualHost>
