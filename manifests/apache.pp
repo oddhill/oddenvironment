@@ -31,8 +31,7 @@ file { '/etc/apache2/httpd.conf':
 }
 
 exec { 'restart apache' :
-  command => 'apachectl restart',
-  cwd         => '/usr/sbin',
+  command     => '/usr/sbin/apachectl restart',
   user        => 'root',
   refreshonly => true
 }

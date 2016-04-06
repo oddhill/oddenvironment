@@ -1,5 +1,3 @@
-$templates = "${home}/bergerac/templates"
-
 # Dnsmasq configs
 $dnsmasq_host = '127.0.0.1'
 $dnsmasq_tld = 'dev'

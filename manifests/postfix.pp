@@ -1,5 +1,3 @@
-$templates = "${home}/bergerac/templates"
-
 $sendgrid_auth = "static:${sendgrid_user}:${sendgrid_pass}"
 
 file { '/etc/postfix/main.cf':
@@ -10,8 +8,7 @@ file { '/etc/postfix/main.cf':
 }
 
 exec { 'restart postfix' :
-  command => 'postfix stop && postfix start || postfix start',
-  cwd => '/usr/sbin',
+  command => '/usr/sbin/postfix stop && /usr/sbin/postfix start || /usr/sbin/postfix start',
   user => 'root',
   refreshonly => true
 }
