@@ -9,3 +9,5 @@ npm install
 composer install
 bundle install
 sudo puppet apply manifests
+
+sudo brew services restart dnsmasq

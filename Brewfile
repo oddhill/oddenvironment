@@ -18,5 +18,5 @@ brew 'php55-xhprof'
 brew 'composer'
 brew 'mongodb', restart_service: true
 brew 'graphicsmagick'
-brew 'dnsmasq', restart_service: true
+brew 'dnsmasq'
 brew 'solr'
