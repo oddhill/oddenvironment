@@ -1,0 +1,30 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    CFPropertyList (2.2.8)
+    facter (2.4.6)
+      CFPropertyList (~> 2.2.6)
+    hiera (3.1.1)
+      json_pure
+    json_pure (1.8.3)
+    puppet (4.4.1)
+      CFPropertyList (~> 2.2.6)
+      facter (> 2.0, < 4)
+      hiera (>= 2.0, < 4)
+      json_pure
+    rake (10.5.0)
+    sass (3.4.22)
+    sass-globbing (1.1.5)
+      sass (>= 3.1)
+    scss_lint (0.47.1)
+      rake (>= 0.9, < 11)
+      sass (~> 3.4.15)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  puppet
+  sass
+  sass-globbing
+  scss_lint
