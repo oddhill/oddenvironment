@@ -1,16 +1,5 @@
-# Bergerac
+# Oddenvironment
 > Easy to manage dev env for OS X
-
-:surfer: **This is just a skeleton, fork or copy this and make it your own!** :surfer:
-
-Bergerac should be installed in the users home folder. But can be changed with `$BERGERAC_DIR` env variable.
-
-## Select software to install
-- Put ruby gems in `Gemfile`
-- Put node modules in `package.json`
-- Put php packages in `composer.json`
-- Put brew packages in `Brewfile`
-- Put puppet code in `site.pp` (nice for copying config files etc.)
 
 ## Prerequisites
 You need CLT installed.
@@ -22,7 +11,7 @@ $ xcode-select --install
 ## Installing
 1. Clone the repository
   ```shell
-  $ git clone git@github.com:USER/REPO.git ${HOME}/bergerac
+  $ git clone git@github.com:oddhill/oddenvironment.git ${HOME}/bergerac
   ```
 
 2. Run `setup.sh`
@@ -34,17 +23,18 @@ $ xcode-select --install
   ```shell
   export BERGERAC_DIR="$HOME/bergerac"
   source $HOME/bergerac/scripts/env.sh
+  alias oddenv=bergerac
   ```
 
 4. Restart your shell and run `bergerac`
   ```shell
-  $ bergerac
+  $ oddenv
   ```
 
 ## Keep up-to-date
 Run the following:
 ```shell
-$ bergerac
+$ oddenv
 ```
 To pull the latest changes and apply them to your system.
 

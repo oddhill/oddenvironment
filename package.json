@@ -1,6 +1,12 @@
 {
   "name": "bergerac",
   "version": "1.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "bower": "^1.7.7",
+    "generator-odd": "^1.0.2",
+    "grunt-cli": "^1.2.0",
+    "gulp": "^3.9.1",
+    "yo": "^1.7.0"
+  },
   "devDependencies": {}
 }
