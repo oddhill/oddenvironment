@@ -3,7 +3,7 @@ tap 'homebrew/versions'
 tap 'homebrew/homebrew-php'
 
 brew 'imagemagick'
-brew 'mysql'
+brew 'mysql', restart_service: true
 brew 'openssl'
 brew 'curl'
 brew 'wget'
@@ -14,7 +14,7 @@ brew 'php55-imagick'
 brew 'php55-xdebug'
 brew 'php55-xhprof'
 brew 'composer'
-brew 'mongodb'
+brew 'mongodb', restart_service: true
 brew 'graphicsmagick'
-brew 'dnsmasq'
+brew 'dnsmasq', restart_service: true
 brew 'solr'
