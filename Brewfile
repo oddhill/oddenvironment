@@ -1,5 +1,10 @@
+tap 'homebrew/dupes'
+tap 'homebrew/versions'
+tap 'homebrew/homebrew-php'
+
 brew 'curl'
 brew 'wget'
 brew 'git'
 brew 'nvm'
+brew 'php55'
 brew 'composer'
