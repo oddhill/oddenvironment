@@ -5,7 +5,7 @@ tap 'homebrew/homebrew-php'
 cask 'java'
 
 brew 'imagemagick'
-brew 'mysql', restart_service: true
+brew 'mysql56', restart_service: true
 brew 'openssl'
 brew 'curl'
 brew 'wget'
