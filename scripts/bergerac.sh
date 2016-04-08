@@ -11,3 +11,4 @@ bundle install
 sudo puppet apply manifests
 
 sudo brew services restart dnsmasq
+brew services restart mysql56
