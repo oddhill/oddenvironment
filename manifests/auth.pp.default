@@ -1,0 +1,3 @@
+# Sendgrid auth
+$sendgrid_user = ''
+$sendgrid_pass = ''
