@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if [[ $EUID -eq 0 ]]; then
+   echo "Hold your horses! I refuse to run this as root."
+   exit 1
+fi
+
 cd $BERGERAC_DIR
 git pull
 brew bundle check || brew bundle
