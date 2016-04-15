@@ -5,6 +5,11 @@ if [[ $EUID -eq 0 ]]; then
    exit 1
 fi
 
+if [[ $1 -eq 'services' ]]; then
+  node $BERGERAC_DIR/scripts/services.js $2 $3
+  exit 0
+fi
+
 cd $BERGERAC_DIR
 git pull
 brew bundle check || brew bundle

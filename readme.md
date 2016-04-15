@@ -43,5 +43,20 @@ $ oddenv
 ```
 To pull the latest changes and apply them to your system.
 
+## Services
+
+```shell
+$ oddenv services list
+$ oddenv services mysql restart
+$ oddenv services apache stop
+```
+Oddenv service command is just a wrapper around other commands.
+So `brew services` might be worth checking out. :)
+
+```shell
+$ brew services list
+$ brew services restart mysql56
+```
+
 ## License
 MIT
