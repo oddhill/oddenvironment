@@ -5,7 +5,7 @@ if [[ $EUID -eq 0 ]]; then
    exit 1
 fi
 
-if [[ $1 -eq 'services' ]]; then
+if [[ "$1" = "services" ]]; then
   node $BERGERAC_DIR/scripts/services.js $2 $3
   exit 0
 fi
