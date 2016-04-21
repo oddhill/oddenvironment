@@ -13,11 +13,11 @@ $ xcode-select --install
   ```shell
   $ git clone https://github.com/oddhill/oddenvironment.git ${HOME}/bergerac
   ```
+
 2. Copy auth.pp.default to auth.pp and enter auth credentials for Sendgrid.
   ```shell
   $ cp ${HOME}/bergerac/manifests/auth.pp.default ${HOME}/bergerac/manifests/auth.pp
   ```
-
 
 3. Run `setup.sh`
   ```shell
