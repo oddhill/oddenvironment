@@ -6,11 +6,13 @@ if [[ $EUID -eq 0 ]]; then
 fi
 
 if [[ "$1" = "services" ]]; then
-  node $BERGERAC_DIR/scripts/services.js $2 $3
+  node $ODDENV_DIR/scripts/services.js $2 $3
   exit 0
 fi
 
-cd $BERGERAC_DIR
+test -f "/etc/facter/facts.d/oddenv.txt" || echo oddenv_dir=$ODDENV_DIR | sudo tee -a /etc/facter/facts.d/oddenv.txt
+
+cd $ODDENV_DIR
 git pull
 brew bundle check || brew bundle
 source "$(brew --prefix nvm)/nvm.sh"
