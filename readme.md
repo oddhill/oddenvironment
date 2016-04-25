@@ -1,4 +1,4 @@
-# Oddenvironment
+# Odd Environment
 > Easy to manage dev env for OS X
 
 ## Prerequisites
