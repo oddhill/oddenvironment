@@ -49,7 +49,8 @@ $ oddenv services list
 $ oddenv services mysql restart
 $ oddenv services apache stop
 ```
-Oddenv service command is just a wrapper around other commands.
+
+`oddenv services` is just a wrapper around other commands.
 So `brew services` might be worth checking out. :)
 
 ```shell
