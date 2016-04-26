@@ -57,5 +57,9 @@ $ brew services list
 $ brew services restart mysql56
 ```
 
+## Logging
+
+Logs for every service is available at */usr/local/var/log*. Simply browse that directory in order to find what you need.
+
 ## License
 MIT
