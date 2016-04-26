@@ -1,6 +1,7 @@
 [mysql]
 
 # CLIENT #
+user                           = root
 port                           = 3306
 socket                         = /tmp/mysql.sock
 
@@ -10,6 +11,13 @@ socket                         = /tmp/mysql.sock
 user                           = mysql
 default-storage-engine         = InnoDB
 socket                         = /tmp/mysql.sock
+
+# LOGGING #
+general-log-file               = mysql.general
+log-error                      = mysql.error
+slow-query-log-file            = mysql.slow
+slow-query-log                 = 1
+long-query-time                = 5
 
 # MyISAM #
 key-buffer-size                = 32M
@@ -27,13 +35,13 @@ expire-logs-days               = 14
 sync-binlog                    = 1
 
 # CACHES AND LIMITS #
-tmp-table-size                 = 32M
-max-heap-table-size            = 32M
-query-cache-type               = 0
-query-cache-size               = 0
-max-connections                = 500
+tmp-table-size                 = 128M
+max-heap-table-size            = 128M
+query-cache-type               = 1
+query-cache-size               = 32M
+max-connections                = 100
 thread-cache-size              = 50
-table-definition-cache         = 4096
+table-definition-cache         = 16384
 
 # INNODB #
 innodb-flush-method            = O_DIRECT
