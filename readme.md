@@ -25,7 +25,7 @@
   $ ${HOME}/oddenv/scripts/setup.sh
   ```
 
-4. Add the following lines to your shell config file.
+4. Add the following lines to your shell config file. (.profile or .bash_profile in your home folder)
   ```shell
   export ODDENV_DIR="$HOME/oddenv"
   source $ODDENV_DIR/scripts/env.sh
