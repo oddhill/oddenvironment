@@ -7,7 +7,7 @@ $apache_port = 80
 $apache_port_ssl = 443
 $apache_sites_dir = "${home}/Sites"
 $apache_config_dir = '/etc/apache2'
-$apache_log_dir = '/private/var/log/apache2'
+$apache_log_dir = '/usr/local/var/log/apache2'
 $apache_cert = "${oddenv_dir}/data/ssl/apache.crt"
 $apache_cert_key = "${oddenv_dir}/data/ssl/apache.key"
 
@@ -28,6 +28,12 @@ file { '/etc/apache2/httpd.conf':
   owner   => root,
   group   => wheel,
   notify  => Exec['restart apache']
+}
+
+file { '/usr/local/var/log/apache2':
+  ensure => 'directory',
+  owner   => root,
+  group   => wheel
 }
 
 exec { 'restart apache' :

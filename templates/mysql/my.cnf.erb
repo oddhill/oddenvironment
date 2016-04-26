@@ -13,9 +13,9 @@ default-storage-engine         = InnoDB
 socket                         = /tmp/mysql.sock
 
 # LOGGING #
-general-log-file               = mysql.general
-log-error                      = mysql.error
-slow-query-log-file            = mysql.slow
+general-log-file               = /usr/local/var/log/mysql/mysql.general
+log-error                      = /usr/local/var/log/mysql/mysql.error
+slow-query-log-file            = /usr/local/var/log/mysql/mysql.slow
 slow-query-log                 = 1
 long-query-time                = 5
 
