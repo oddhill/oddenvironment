@@ -2,11 +2,12 @@
 > Easy to manage dev env for OS X
 
 ## Prerequisites
-You need CLT installed.
-Run the following to install it:
-```shell
-$ xcode-select --install
-```
+1. You need CLT installed. Run the following to install it:
+  ```shell
+  $ xcode-select --install
+  ```
+
+2. Make sure that Odd Boxen is completely removed if you've been using that previously. Please read [Migrating from Odd Boxen](#migrating-from-odd-boxen) for further details.
 
 ## Installing
 1. Clone the repository
@@ -61,6 +62,49 @@ $ brew services restart mysql56
 ## Logging
 
 Logs for every service is available at */usr/local/var/log*. Simply browse that directory in order to find what you need.
+
+## Migrating from Odd Boxen
+
+### Backup everything that you might need
+
+- **MySQL databases**. Run this command to dump every database and the contents to the desktop:
+```shell
+$ mysqldump -u root -h 127.0.0.1 --all-databases > ~/Desktop/databases.sql
+```
+- **Homebrew packages**. You probably know if you've installed some additional package manually, but you can run the following command to get a list of what you've installed. Write them down and install them manually again after you've installed Odd Environment.
+```shell
+$ brew list
+```
+- **Node packages**. Same goes here, you'll need to install your manually installed packages afterwards. Use this command to see a list of the global packages currently installed:
+```shell
+$ npm -g list
+```
+
+### Delete every trace of Odd Boxen
+
+1. Run the following commands, one at a time:
+```shell
+$ cd /opt/boxen/repo
+$ script/nuke --all --force
+$ cd
+$ rm -r ~/src/
+$ for i in `gem list --no-versions`; do sudo gem uninstall -aIx $i; done
+```
+2. Edit `~/.profile` and remove the line that says `source /opt/boxen/env.sh`.
+3. Remove any applications from `~/Applications` that has been installed by Homebrew Cask. You want to delete the ones that are symlinks, and keep the rest.
+4. Reboot (just for the sake of it)
+5. Done!
+
+### After installation of Odd Environment
+
+1. Import your databases again:
+```shell
+$ mysql < ~/Desktop/databases.sql
+```
+2. Install any additional Homebrew package that you might still need, but isn't included in Odd Environment...
+3. ... and do the same for Node packages.
+
+
 
 ## License
 MIT
