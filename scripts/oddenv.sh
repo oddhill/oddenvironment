@@ -13,6 +13,12 @@ fi
 test -f "/etc/facter/facts.d/oddenv.txt" || echo oddenv_dir=$ODDENV_DIR | sudo tee -a /etc/facter/facts.d/oddenv.txt
 
 cd $ODDENV_DIR
+git remote update
+commitsBehind=`git rev-list HEAD...origin/master --count`
+if [ $commitsBehind -eq 0 ] && command -v node >/dev/null 2>&1 && [ "$1" != "--force" ]; then
+  echo "Already up-to-date, use --force to run anyway."
+  exit 0
+fi
 git pull
 brew bundle check || brew bundle
 source "$(brew --prefix nvm)/nvm.sh"
