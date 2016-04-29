@@ -13,6 +13,7 @@ fi
 test -f "/etc/facter/facts.d/oddenv.txt" || echo oddenv_dir=$ODDENV_DIR | sudo tee -a /etc/facter/facts.d/oddenv.txt
 
 cd $ODDENV_DIR
+./scripts/satisfy.sh
 git remote update
 commitsBehind=`git rev-list HEAD...origin/master --count`
 if [ $commitsBehind -eq 0 ] && command -v node >/dev/null 2>&1 && [ "$1" != "--force" ]; then
