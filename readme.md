@@ -31,9 +31,9 @@
   source $ODDENV_DIR/scripts/env.sh
   ```
 
-5. Restart your shell and run `oddenv`
+5. Restart your shell and run `oddenv` in order to install everything
   ```shell
-  $ oddenv
+  $ oddenv --force
   ```
 
 ## Keep up-to-date
