@@ -95,6 +95,11 @@ $ for i in `gem list --no-versions`; do sudo gem uninstall -aIx $i; done
 4. Reboot (just for the sake of it)
 5. Done!
 
+### Make sure that Homebrew has been removed
+Some users have experienced problems after Odd Boxen was removed which all has been releated to traces of Homebrew that wasn't removed properly.
+
+Make sure that homebrew doesn't existing by running `brew`. If the command still works, you will need to uninstall it manually by running `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"`.
+
 ### After installation of Odd Environment
 
 1. Import your databases again:
