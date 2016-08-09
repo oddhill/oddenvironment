@@ -43,7 +43,6 @@ currentBranch=$(git rev-parse --abbrev-ref HEAD)
 # If on master, checkout latest tag (version)
 # Probably the first time you run `oddenv`
 if [ $currentBranch = "master" ]; then
-  git checkout $latestTag
   update $latestTag
   exit 0
 fi
