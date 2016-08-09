@@ -1,5 +1,21 @@
 #!/usr/bin/env bash
 
+if [[ $EUID -eq 0 ]]; then
+   echo "Hold your horses! I refuse to run this as root."
+   exit 1
+fi
+
+if [[ "$1" = "services" ]]; then
+  node $ODDENV_DIR/scripts/services.js $2 $3
+  exit 0
+fi
+
+test -f "/etc/facter/facts.d/oddenv.txt" || echo oddenv_dir=$ODDENV_DIR | sudo tee -a /etc/facter/facts.d/oddenv.txt
+
+cd $ODDENV_DIR
+./scripts/satisfy.sh
+
+# Update function
 function update {
   # If not up-to-date, update!
   git checkout $1
@@ -15,21 +31,6 @@ function update {
   sudo brew services restart dnsmasq
   brew services restart mysql56
 }
-
-if [[ $EUID -eq 0 ]]; then
-   echo "Hold your horses! I refuse to run this as root."
-   exit 1
-fi
-
-if [[ "$1" = "services" ]]; then
-  node $ODDENV_DIR/scripts/services.js $2 $3
-  exit 0
-fi
-
-test -f "/etc/facter/facts.d/oddenv.txt" || echo oddenv_dir=$ODDENV_DIR | sudo tee -a /etc/facter/facts.d/oddenv.txt
-
-cd $ODDENV_DIR
-./scripts/satisfy.sh
 
 # Get tags from master
 git fetch origin master --tags
