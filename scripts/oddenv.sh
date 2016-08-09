@@ -55,5 +55,5 @@ if [ $currentTag = $latestTag ] && command -v node >/dev/null 2>&1 && [ "$1" != 
   exit 0
 fi
 
-# This will run if `--force` is true.
+# This will run if the above fails
 update $latestTag
