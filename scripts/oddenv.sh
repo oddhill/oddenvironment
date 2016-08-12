@@ -14,21 +14,46 @@ test -f "/etc/facter/facts.d/oddenv.txt" || echo oddenv_dir=$ODDENV_DIR | sudo t
 
 cd $ODDENV_DIR
 ./scripts/satisfy.sh
-git remote update
-commitsBehind=`git rev-list HEAD...origin/master --count`
-if [ $commitsBehind -eq 0 ] && command -v node >/dev/null 2>&1 && [ "$1" != "--force" ]; then
+
+# Update function
+function update {
+  # If not up-to-date, update!
+  git checkout $1
+  brew bundle check || brew bundle
+  source "$(brew --prefix nvm)/nvm.sh"
+  nvm which 5.0 || nvm install 5.0
+  npm prune
+  npm install
+  composer install
+  bundle install
+  sudo puppet apply manifests
+
+  sudo brew services restart dnsmasq
+  brew services restart mysql56
+}
+
+# Get tags from master
+git fetch origin master --tags
+
+# Store latest tag
+latestTag=$(git describe --tags `git rev-list --tags --max-count=1`)
+
+# Get current branch
+currentBranch=$(git rev-parse --abbrev-ref HEAD)
+
+# If on master, checkout latest tag (version)
+# Probably the first time you run `oddenv`
+if [ $currentBranch = "master" ]; then
+  update $latestTag
+  exit 0
+fi
+
+# Get the current tag and check if up-to-date
+currentTag=$(git describe --tags)
+if [ $currentTag = $latestTag ] && command -v node >/dev/null 2>&1 && [ "$1" != "--force" ]; then
   echo "Already up-to-date, use --force to run anyway."
   exit 0
 fi
-git pull
-brew bundle check || brew bundle
-source "$(brew --prefix nvm)/nvm.sh"
-nvm which 5.0 || nvm install 5.0
-npm prune
-npm install
-composer install
-bundle install
-sudo puppet apply manifests
 
-sudo brew services restart dnsmasq
-brew services restart mysql56
+# This will run if the above fails
+update $latestTag
