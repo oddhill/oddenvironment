@@ -33,7 +33,7 @@ function update {
 }
 
 # Get tags from master
-git fetch origin master --tags
+git fetch origin master --tags >/dev/null 2>&1
 
 # Store latest tag
 latestTag=$(git describe --tags `git rev-list --tags --max-count=1`)
