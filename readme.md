@@ -1,6 +1,9 @@
 # Odd Environment
 > Easy to manage dev env for OS X
 
+## macOS Sierra
+Odd Environment should work on Sierra if you're installing it from a fresh state. However, you will need to take manual actions if you've upgraded from an earlier OS. Please read the issue at https://github.com/oddhill/oddenvironment/issues/19 for further details and discussion.
+
 ## Prerequisites
 1. You need CLT installed. Run the following to install it:
   ```shell
