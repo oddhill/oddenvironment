@@ -11,7 +11,7 @@ brew 'curl', args: ['with-openssl']
 brew 'wget'
 brew 'git'
 brew 'nvm'
-brew 'php55', args: ['with-homebrew-curl', 'with-homebrew-openssl']
+brew 'php55', args: ['with-homebrew-curl', 'with-homebrew-openssl', 'with-apache']
 brew 'php55-imagick'
 brew 'php55-xdebug'
 brew 'php55-xhprof'
