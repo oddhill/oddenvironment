@@ -32,7 +32,7 @@ file { '/etc/apache2/httpd.conf':
 
 file { '/usr/local/var/log/apache2':
   ensure => 'directory',
-  owner   => root,
+  owner   => $user,
   group   => wheel
 }
 

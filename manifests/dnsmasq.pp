@@ -4,7 +4,7 @@ $dnsmasq_tld = 'dev'
 
 file { '/usr/local/etc/dnsmasq.conf':
   content => template("${templates}/dnsmasq/dnsmasq.conf.erb"),
-  owner   => root,
+  owner   => $user,
   group   => wheel
 }
 file { '/etc/resolver':
