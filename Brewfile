@@ -11,10 +11,10 @@ brew 'curl', args: ['with-openssl']
 brew 'wget'
 brew 'git'
 brew 'nvm'
-brew 'php55', args: ['with-homebrew-curl', 'with-homebrew-openssl', 'with-apache']
-brew 'php55-imagick'
-brew 'php55-xdebug'
-brew 'php55-xhprof'
+brew 'php56', args: ['with-homebrew-curl', 'with-homebrew-openssl', 'with-apache']
+brew 'php56-imagick'
+brew 'php56-xdebug'
+brew 'php56-xhprof'
 brew 'composer'
 brew 'mongodb', restart_service: true
 brew 'graphicsmagick'
