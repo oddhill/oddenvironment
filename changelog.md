@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.3.0 [2017-04-05]
+### Changed
+- Updated PHP from 5.5 to 5.6. You might need to uninstall PHP 5.5 before since
+I'm not sure how Homebrew will handle the transition. Just run `oddenv` and see
+what happens :)
+
 ## v1.2.0 [2016-09-29]
 ### Changed
 - Node version, from 5 to 6. This is because 6 will be the latest LTS version
