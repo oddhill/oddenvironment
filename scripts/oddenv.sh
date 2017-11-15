@@ -21,7 +21,7 @@ function update {
   git checkout $1
   brew bundle check || brew bundle
   source "$(brew --prefix nvm)/nvm.sh"
-  nvm which 6.7.0 || nvm install 6.7.0 && nvm alias default 6.7.0
+  nvm install --lts && nvm alias default node
   npm prune
   npm install
   composer install
