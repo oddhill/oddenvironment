@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.4.0 [2017-12-19]
+### Changed
+- Now uses .localhost instead of .dev as a TLD since .dev has become a real gTLD and cannot as easily be used for development purposes any longer
+
 ## v1.3.0 [2017-04-05]
 ### Changed
 - Updated PHP from 5.5 to 5.6. You might need to uninstall PHP 5.5 before since
