@@ -1,6 +1,6 @@
 # Dnsmasq configs
 $dnsmasq_host = '127.0.0.1'
-$dnsmasq_tld = 'dev'
+$dnsmasq_tld = 'localhost'
 
 file { '/usr/local/etc/dnsmasq.conf':
   content => template("${templates}/dnsmasq/dnsmasq.conf.erb"),
@@ -12,7 +12,7 @@ file { '/etc/resolver':
   owner   => root,
   group   => wheel
 }
-file { '/etc/resolver/dev':
+file { '/etc/resolver/localhost':
   content => 'nameserver 127.0.0.1',
   owner   => root,
   group   => wheel,
