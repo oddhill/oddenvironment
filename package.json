@@ -1,6 +1,6 @@
 {
   "name": "oddenv",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "dependencies": {
     "bower": "^1.7.7",
     "generator-odd": "^1.0.2",
